@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PizzaDetail from './pizzeriadetail';
+import PizzaDetail from './pizzeriadetail';
 import axios from 'axios';
 
 class PizzaList extends Component {
