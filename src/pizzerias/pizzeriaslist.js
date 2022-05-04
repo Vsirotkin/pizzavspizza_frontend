@@ -25,10 +25,17 @@ class PizzaList extends Component {
             .catch(function (error) {
                 console.log(error);
             });
-        }
+    }
+
+    showPizzeriaDetails(item){
+        this.getPizzaDetail(item);
+        this.setState({ showComponent: true });
+    }
+
 
     componentDidMount(){
-        axios.get("http://127.0.0.1:8000/")
+        axios
+            .get("http://127.0.0.1:8000/")
             .then((response) => {
                 this.setState({pizzeriasData: response.data})
             })
@@ -39,12 +46,18 @@ class PizzaList extends Component {
     render() {
         return (
             <div>
-                {this.state.pizzeriasData.map( item => {
-                    return <h3 key={item.id} >{item.pizzeria_name}, {item.city}</h3>
-                    })
-                }
+                {this.state.pizzeriasData.map((item) => {
+                    return (
+                        <h3 key={item.id} onClick={() => this.showPizzeriaDetails(item)}>
+                            {item.pizzeria_name}, {item.city}
+                        </h3>
+                    );
+                })}
+                {this.state.showComponent ? (
+                    <PizzaDetail pizzariaDetail={this.state.pizzeria} />
+                 ) : null}
             </div>
-        )
+        );
     }
 }
 
