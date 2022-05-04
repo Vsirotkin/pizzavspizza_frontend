@@ -16,6 +16,17 @@ class PizzaList extends Component {
 
     }
 
+    getPizzaDetail(item){
+        axios
+            .get("http://127.0.0.1:8000".concat(item.absolute_url))
+            .then((response) => {
+                this.setState({pizzeria: response.data});
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }
+
     componentDidMount(){
         axios.get("http://127.0.0.1:8000/")
             .then((response) => {
