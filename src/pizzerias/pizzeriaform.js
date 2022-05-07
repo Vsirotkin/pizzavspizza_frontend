@@ -32,10 +32,21 @@ class PizzaForm extends React.Component{
                 })
             }
         render() {
-            const {pizzeria_name} = this.state;
+            const {
+                pizzeria_name,
+                street,
+                city,
+                state,
+                zip_code,
+                website,
+                phone_number,
+                description,
+                email,
+            } = this.state;
             return (
                 <form onSubmit={this.handleSubmit}>
                     <div>
+                        Pizzeria
                         <input
                             type='text'
                             name='pizzeria_name'
@@ -43,12 +54,84 @@ class PizzaForm extends React.Component{
                             onChange={this.handleChange}
                         />
                     </div>
-                    <input type='submit' value='Submit' />
+                    <div>
+                        Address
+                        <input
+                            type="text"
+                            name="street"
+                            value={street}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                    <div>
+                        City
+                        <input 
+                            type="text"
+                            name="city"
+                            value={city}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                    <div>
+                        State
+                        <input 
+                            type="text"
+                            name="state"
+                            value={state}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                    <div>
+                        Zip_code
+                        <input
+                            type="text"
+                            name="zip_code"
+                            value={zip_code}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                    <div>
+                        WebSite
+                        <input 
+                            type="text"
+                            name="website"
+                            value={website}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                    <div>
+                        Phone
+                        <input 
+                            type="text"
+                            name="phone_number"
+                            value={phone_number}
+                            onChange={this.onChange}
+                        />
+                    </div>
+                    <div>
+                        Description
+                        <input 
+                            type="text"
+                            name="description"
+                            value={description}
+                            onChange={this.handleChange}
+
+                        />
+                    </div>
+                    <div>
+                        Email
+                        <input 
+                            type="text"
+                            name="email"
+                            value={email}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                    <input style={{backgroundColor:'white'}} type='submit' value='Submit' />
                 </form>
             );
         }
 }
-
 
 
 
