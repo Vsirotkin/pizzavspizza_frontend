@@ -6,6 +6,14 @@ class PizzaForm extends React.Component{
         super(props);
         this.state = {
             pizzeria_name: " ",
+            street: " ",
+            city: " ",
+            state: " ",
+            zip_code: " ",
+            website: " ",
+            phone_number: " ",
+            description: " ",
+            email: " ",
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,7 +30,16 @@ class PizzaForm extends React.Component{
 
             axios
                 .post('http://127.0.0.1:8000/create/' , {
-                    pizzeria_name: this.state.pizzeria_name
+                    pizzeria_name:  this.state.pizzeria_name,
+                    street:         this.state.street,
+                    city:           this.state.city,
+                    state:          this.state.state,
+                    zip_code:       this.state.zip_code,
+                    website:        this.state.website,
+                    phone_number:   this.state.phone_number,
+                    description:    this.state.description,
+                    email:          this.state.email,
+
                 })
                 .then((response) =>{
                     console.log(response);
