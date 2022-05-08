@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
+import { Component } from "react";
 
-class PizzaForm extends React.Component{
+class PizzaForm extends Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -26,7 +27,6 @@ class PizzaForm extends React.Component{
         handleSubmit(event) {
             alert('A name was submitted: ' + this.state.value);
             event.preventDefault();
-            console.log(this.state.pizzeria_name);
 
             axios
                 .post('http://127.0.0.1:8000/create/' , {
@@ -72,7 +72,7 @@ class PizzaForm extends React.Component{
                         />
                     </div>
                     <div>
-                        Address
+                        Street
                         <input
                             type="text"
                             name="street"
@@ -99,7 +99,7 @@ class PizzaForm extends React.Component{
                         />
                     </div>
                     <div>
-                        Zip_code
+                        Zip_Code
                         <input
                             type="text"
                             name="zip_code"
@@ -122,7 +122,7 @@ class PizzaForm extends React.Component{
                             type="text"
                             name="phone_number"
                             value={phone_number}
-                            onChange={this.onChange}
+                            onChange={this.handleChange}
                         />
                     </div>
                     <div>
