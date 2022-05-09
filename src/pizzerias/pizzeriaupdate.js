@@ -18,19 +18,19 @@ class PizzaUpdate extends Component{
         this.setState({ value: event.target.value });
         }
     
-        handleSubmit(event) {
-            event.preventDefault();
-            axios 
-                .patch("http://127.0.0.1:8000".concat(this.state.obj_to_update.update), {
-                    description: this.state.value,
-                })
-                .then((response) => {
-                    console.log(response);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-        }
+    handleSubmit(event) {
+        event.preventDefault();
+        axios 
+            .patch("http://127.0.0.1:8000".concat(this.state.obj_to_update.update), {
+                description: this.state.value,
+            })
+            .then((response) => {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
 
     render() {
         const { value } = this.state;
