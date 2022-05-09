@@ -132,7 +132,6 @@ class PizzaForm extends Component{
                         name="description"
                         value={description}
                         onChange={this.handleChange}
-
                     />
                 </div>
                 <div>
